@@ -46,10 +46,16 @@ function addQuestion(questionText) {
 }
 
 //Add a new answer to a question
-
-function addAnswer(answerText) {
+/*function addAnswer(answerText) {
   console.log("adding a new answer", answerText);
-}
+  $.ajax({
+    method: "POST",
+    url: "/questions/:qID/answers"
+    contentType: "application/json",
+    data: JSON.stringify({
+      text: questionText
+  })
+}*/
 
 // Event Bindisngs
 $("#add-question-form").on("submit", function(e) {
@@ -59,7 +65,7 @@ $("#add-question-form").on("submit", function(e) {
   $questionInput.val("");
 });
 
-$("#add-answer-form").on("submit", function(e) {
+$(".add-answer-form").on("submit", function(e) {
   e.preventDefault();
   var answerText = $answerInput.val();
   addAnswer(answerText);
