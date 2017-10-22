@@ -37,6 +37,7 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.use(express.static("public"));
 app.use("/questions", routes);
 
 // catch 404 and forward to error handler
@@ -47,7 +48,6 @@ app.use(function(req, res, next) {
 });
 
 // Error Handler
-
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.json({

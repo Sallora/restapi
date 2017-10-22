@@ -4,9 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Testing my API</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.css">
+  <link rel="stylesheet" href="main.css">
+  <title>Document</title>
 </head>
+
 <body>
-<p>This is p1</p>
+
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Lu-ora
+        </h1>
+        <h2 class="subtitle">
+          <br>
+          <b>Questions you should have known before asking!</b>
+        </h2>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+   <div class="container">
+     <div class="columns">
+       <div class="column is-three-quarters">
+         <div class="field has-addons">
+           <div class="control">
+             <input class="input" type="text" placeholder="Search for questions">
+           </div>
+           <div class="control">
+             <a class="button is-info">
+               Search
+             </a>
+           </div>
+         </div>
+
+         <ul id="questions-list"></ul>
+       </div>
+       <aside class="column">
+         <h4><b>Ask a question</b></h4>
+         <br>
+          <form action="" method="POST" id="add-question-form">
+         <div class="control">
+          <input class="input" type="text" placeholder="Text input" id="question-input">
+        </div>
+        <button class="button is-primary" id="submit-button">Submit</button>
+      </form>
+     </aside>
+     </div>
+   </div>
+ </section>
+
+
+ <footer class="footer">
+   <div class="container">
+     <div class="content has-text-centered">
+       <p>
+         <strong>Lu-ora</strong> by <a href="http://lorasalomidou.com">Lora Salomidou</a>.
+       </p>
+     </div>
+   </div>
+ </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="main.js"></script>
+
 </body>
 </html>

@@ -42,6 +42,7 @@ router.get("/", function(req, res, next) {
 // POST /questions
 // Route for creating questions
 router.post("/", function(req, res, next) {
+  console.log("request body", req.body);
   var question = new Question(req.body);
   question.save(function(err, question) {
     if (err) return next(err);
