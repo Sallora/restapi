@@ -41,6 +41,7 @@
            </div>
          </div>
 
+
          <ul id="questions-list"></ul>
        </div>
        <aside class="column">
@@ -58,6 +59,7 @@
  </section>
 
 
+
  <footer class="footer">
    <div class="container">
      <div class="content has-text-centered">
@@ -68,7 +70,34 @@
    </div>
  </footer>
 
+
+
+
+ <script id="question-template" type="text/x-handlebars-template">
+   <li class="question-item">
+   <small>Question id: {{ _id }}</small>
+   <p>{{ text }}</p>
+   <br>
+   <form action="" method="POST" id="add-answer-form">
+   <div class="control">
+   <input class="input" type="text" placeholder="Answer this question" id="answer-input">
+   </div>
+   </form>
+   <button class="button is-primary" id="submit-button">Submit Answer</button>
+   <h6 class="title is-6">Answers</h6>
+   <ul class="answers">
+     {{#each answers}}
+     <li class="answer">
+       {{ text }} <span class="tag is-primary">{{votes}}</span>
+     </li>
+     {{/each}}
+   </ul>
+   </li>
+ </script>
+
+
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
   <script src="main.js"></script>
 
 </body>

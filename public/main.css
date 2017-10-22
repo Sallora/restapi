@@ -18,3 +18,8 @@
   border-color: transparent;
   color: #fff;
 }
+
+.button.is-link {
+  float: right;
+  background-color: #89b3f7;
+}

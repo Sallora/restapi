@@ -1,4 +1,8 @@
+//Variables
 var $questionInput = $("#question-input");
+var $answerInput = $("#answer-input");
+var source = $("#question-template").html();
+var qTemplate = Handlebars.compile(source);
 
 // HELPER FUNCTIONS
 function errorHandler(error) {
@@ -7,16 +11,16 @@ function errorHandler(error) {
 }
 
 //GET list of Qs
+
 function getQuestions() {
-  //  $carsList.addClass("loading").html($spinner);
   $.ajax({
     url: "/questions"
   })
     .done(function(response) {
       $("#questions-list").html("");
       for (var i = 0; i < response.length; i++) {
-        var q = response[i].text;
-        $("#questions-list").append("<li>" + q + "</li>");
+        var q = response[i];
+        $("#questions-list").append(qTemplate(q));
       }
     })
     .fail(errorHandler);
@@ -41,10 +45,23 @@ function addQuestion(questionText) {
     .fail(errorHandler);
 }
 
-// Event Bindings
+//Add a new answer to a question
+
+function addAnswer(answerText) {
+  console.log("adding a new answer", answerText);
+}
+
+// Event Bindisngs
 $("#add-question-form").on("submit", function(e) {
   e.preventDefault();
   var questionText = $questionInput.val();
   addQuestion(questionText);
   $questionInput.val("");
+});
+
+$("#add-answer-form").on("submit", function(e) {
+  e.preventDefault();
+  var answerText = $answerInput.val();
+  addAnswer(answerText);
+  $answerInput.val("");
 });
